@@ -11,6 +11,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
+  margin-bottom: 99px;
   height: 550px;
   width: 65%;
   perspective: 1110px;
@@ -73,7 +74,8 @@ body {
   .card .back {
     background: #eceeef;
     z-index: 0;
-    transform: rotateY(-180deg); }
+    transform: rotateY(-180deg);
+    display: none; }
     .card .back h1 {
       text-align: center; }
     .card .back .content {

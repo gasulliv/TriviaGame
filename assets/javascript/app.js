@@ -633,6 +633,9 @@ $(document).ready(function() {
 					$(".trivia").css({
 						"display": "none",
 					});
+					$(".back").css({
+						"display": "block",
+					});
 					$(".correct-content").css({
 						"display": "none",
 					});
@@ -699,6 +702,9 @@ $(document).ready(function() {
 
 		$(".trivia").css({
 			"display": "none",
+		});
+		$(".back").css({
+			"display": "block",
 		});
 		// User picked correct answer
 		if ($(this).attr("value") === topics[topicIndex].correctAnswer[i]) {
