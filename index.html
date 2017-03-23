@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Trivia Game</title>
+
+	<!-- Reset CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional Bootstrap theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+
+	<!-- Latest compiled and minified Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="https://use.fontawesome.com/d1c076a58a.js"></script>
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="face front">
+				<!-- Start Menu -->
+				<div class="row start-menu">
+					<div class="col-md-6 topics">
+						<h1>Topics:</h1>
+						<ul>
+							<li><button class="btn btn-default btn-lg button button1" type="submit" value="entertainment" index="0" bg="#e5b7e5">Entertainment</button></li>
+							<li><button class="btn btn-default btn-lg button button1" type="submit" value="food" index="1" bg="#dda699">Food</button></li>
+							<li><button class="btn btn-default btn-lg button button1" type="submit" value="international" index="2" bg="#b2e096">International</button></li>
+							<li><button class="btn btn-default btn-lg button button1" type="submit" value="movies" index="3" bg="#7bedcc">Movies</button></li>
+							<li><button class="btn btn-default btn-lg button button1" type="submit" value="tv" index="4" bg="#a0bee8">TV</button></li>
+							<li><button class="btn btn-default btn-lg button button1" type="submit" value="music" index="5" bg="#f2dda9">Music</button></li>
+						</ul>
+					</div>
+					<div class="col-md-6 difficulties">
+						<h1>Difficulty:</h1>
+						<ul>
+							<li><button class="btn btn-default btn-lg button button2" type="submit" value="easy" difficulty-index="0">Easy</button></li>
+							<li><button class="btn btn-default btn-lg button button2" type="submit" value="normal" difficulty-index="1">Normal</button></li>
+							<li><button class="btn btn-default btn-lg button button2" type="submit" value="hard" difficulty-index="2">Hard</button></li>
+							<li><button class="btn btn-success btn-lg" id="start" type="submit" value="start">Start</button></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Trivia -->
+				<div class="row trivia">
+					<div class="col-md-12">
+						<h1 class="title">Trivia Game</h1>
+						<h3 class="timer">Time Remaining: 0:08</h3>
+						<h3 class="question">What play revived on Broadway in 1988, starred Jason Robards and Colleen Dewhurst?</h3>
+						<div class="choices">
+							<h4 class="choice" id="choice1">1. Death of a Salesman</h4>
+							<h4 class="choice" id="choice2">2. The Iceman Cometh</h4>
+							<h4 class="choice" id="choice3">3. Long Day's Journey Into Night</h4>
+							<h4 class="choice" id="choice4">4. A Moon for the Misbegotten</h4>
+						</div>
+					</div>
+				</div>
+
+				<!-- Result -->
+				<div class="row result">
+					<div class="col-md-12">
+						<h1>Trivia Game</h1>
+						<h1>Result</h1>
+						<div class="score">
+							<h3>Correct: <span id="correct"></span></h3>
+							<h3>Incorrect: <span id="incorrect"></span></h3>
+							<h3>Unanswered: <span id="unanswered"></span></h3>
+							<button class="btn btn-primary btn-lg play-again" type="submit">Play again</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="face back">
+				<!-- Correct -->
+				<div class="row correct-content">
+					<div class="col-md-12 content">
+						<h1>Congratulations!</h1>
+						<h3>You picked the correct answer</h3>
+					</div>
+				</div>
+
+				<!-- Incorrect -->
+				<div class="row incorrect-content">
+					<div class="col-md-12 content">
+						<h1>Wrong!</h1>
+						<h3>The correct answer was: <span class="correct-answer"></span></h3>
+					</div>
+				</div>
+
+				<!-- Time is up -->
+				<div class="row no-time-content">
+					<div class="col-md-12 content">
+						<h1>Time is up!</h1>
+						<h3>The correct answer was: <span class="correct-answer"></span></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<footer class="footer" role="contentinfo">
+		<section class="bg-darkgray" style="position:relative;">
+			<div class="footer--info centered clearfix">
+				<div class="col-md-4 footer-contact">
+					<h3>Contact</h3>
+					<ul class="footer--info--contact">
+						<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:lparedesl@gmail.com">lparedesl@gmail.com</a></li>
+						<li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:980-428-6491">(980) 428-6491</a></li>
+						<li><i class="fa fa-map-marker" aria-hidden="true"></i><a href="https://www.google.com/maps/place/6301+Woodland+Commons+Dr,+Charlotte,+NC+28269/@35.377623,-80.782182,17z/data=!3m1!4b1!4m5!3m4!1s0x88541d30aa4e0ff7:0xa18e94ca6cd1c7bf!8m2!3d35.377623!4d-80.782182?hl=en" target="_blank">6301 Woodland Commons Dr<p style="padding-left: 18px">Charlotte NC 28269</p></a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 footer-connect">
+					<h3>Connect</h3>
+					<ul class="social">
+						<li><a href="https://www.linkedin.com/" class="linkedin" target="_blank">
+							<i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+						</a></li>
+						<li><a href="https://github.com/lparedesl" class="github" target="_blank">
+							<i class="fa fa-github fa-2x" aria-hidden="true"></i>
+						</a></li>
+						<li><a href="https://www.facebook.com/" class="facebook" target="_blank">
+							<i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+						</a></li>
+						<li><a href="https://twitter.com/" class="twitter" target="_blank">
+							<i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+						</a></li>
+						<li><a href="https://plus.google.com/" class="googleplus" target="_blank">
+							<i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
+						</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 footer-navigation">
+					<h3>Navigate</h3>
+					<ul class="footer--info--navigate">
+						<li><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="#">About</a></li>
+						<li><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="#">Portfolio</a></li>
+						<li><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="bottom-bar">
+			<p>© 2017 | Luis Paredes</p>
+		</section>
+	</footer>
+</body>
+</html>
